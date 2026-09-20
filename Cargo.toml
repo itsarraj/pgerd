@@ -1,0 +1,25 @@
+[package]
+name = "pgerd"
+version = "0.1.0"
+edition = "2021"
+description = "Connects to a live Postgres and renders its real foreign-key relationships as a Graphviz DOT entity-relationship diagram"
+license = "MIT"
+authors = ["Animesh Raj <animesh080808@gmail.com>"]
+repository = "https://github.com/itsarraj/pgerd"
+readme = "README.md"
+keywords = ["postgres", "erd", "graphviz", "dot", "cli"]
+categories = ["command-line-utilities"]
+
+[lib]
+name = "pgerd"
+path = "src/lib.rs"
+
+[[bin]]
+name = "pgerd"
+path = "src/main.rs"
+
+[dependencies]
+sqlx = { version = "0.8", default-features = false, features = ["runtime-tokio", "tls-rustls", "postgres"] }
+tokio = { version = "1", features = ["full"] }
+clap = { version = "4", features = ["derive", "env"] }
+anyhow = "1"
