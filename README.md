@@ -7,6 +7,12 @@ this workspace's `pgdiff` (which diffs two schemas) and `pgexplain`
 schema itself: which tables reference which, through which columns,
 without hand-drawing an ERD or exporting one from a GUI tool.
 
+## Installation
+
+```sh
+cargo install --path .
+```
+
 ## Usage
 
 ```bash
